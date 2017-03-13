@@ -1,1 +1,35 @@
-asdf
+1)
+select books.title
+	from books, authors
+	where books.author_id = authors.author_id and
+	authors.lastname = 'Hawking' and authors.firstname = 'Stephen';
+                     TITLE
+--------------------------
+   A Brief History of Time
+The Universe in a Nutshell
+ A Briefer History of Time
+          The Grand Design
+          
+2)
+select books.title, books.published
+	from authors, books
+	where authors.author_id = books.author_id
+	and authors.firstname = 'Douglas' and authors.lastname = 'Adams';
+                                    TITLE PUBLISHED
+----------------------------------------- ---------
+     The Hitchhiker's Guide to the Galaxy      1979
+The Restaurant at the End of the Universe      1980
+        Life, The Universe and Everything      1982
+     So Long, and Thanks for all the Fish      1984
+     
+3)
+SELECT authors.firstname, authors.lastname, books.ISBN, books.published
+	from books, authors
+	where books.author_id = authors.author_id and
+	books.title = 'Something Under the Bed is Drooling';
+FIRSTNAME  LASTNAME          ISBN PUBLISHED
+--------- --------- ------------- ---------
+     Bill Watterson 0-836-21825-6      1988
+OK (1 rows(s))
+
+4)
